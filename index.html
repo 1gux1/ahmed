@@ -22,7 +22,6 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            display: none;
         }
 
         #video-container {
@@ -42,8 +41,9 @@
     <button id="start-btn">اضغط هنا</button>
 
     <div id="video-container">
-        <video autoplay loop muted>
+        <video id="video" autoplay loop>
             <source src="a.mp4" type="video/mp4">
+
             Your browser does not support the video tag.
         </video>
     </div>
@@ -51,13 +51,12 @@
     <script>
         const startBtn = document.getElementById('start-btn');
         const videoContainer = document.getElementById('video-container');
-
-        // Display the button initially
-        startBtn.style.display = 'block';
+        const video = document.getElementById('video');
 
         startBtn.addEventListener('click', () => {
             startBtn.style.display = 'none';
             videoContainer.style.display = 'flex';
+            video.play(); // Ensure the video starts playing
         });
     </script>
 
