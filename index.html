@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Page Video</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: orange;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #video-container {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="start-btn">اضغط هنا</button>
+
+    <div id="video-container">
+        <video autoplay loop muted>
+            <source src="a.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        const startBtn = document.getElementById('start-btn');
+        const videoContainer = document.getElementById('video-container');
+
+        // Display the button initially
+        startBtn.style.display = 'block';
+
+        startBtn.addEventListener('click', () => {
+            startBtn.style.display = 'none';
+            videoContainer.style.display = 'flex';
+        });
+    </script>
+
+</body>
+</html>
